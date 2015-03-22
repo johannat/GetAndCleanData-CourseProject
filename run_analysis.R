@@ -52,7 +52,6 @@ run_analysis <- function() {
     data$activity <- factor(data$act_id, activity_labels$act_id,
                             activity_labels$act_label)
     data <- select(data, -act_id)
-    rm("activity_labels")
     
     # data by activity and subject
     grouped_data <- group_by(data, activity, subject_id)
